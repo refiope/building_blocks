@@ -11,7 +11,7 @@ def substrings (string, dictionary)
   end
 
   string_array = string.downcase.split(' ') #lower-case then split by space
-  string_array.each { |word| word.gsub!(/\W/,'') #trim each word (remove anything that's not a letter
+  string_array.each { |word| word.gsub!(/[^a-z]/,'') #trim each word (remove anything that's not a letter
                       check_dictionary(word, dictionary, word_count)}
   puts word_count
 end
