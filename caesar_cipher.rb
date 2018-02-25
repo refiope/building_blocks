@@ -8,7 +8,7 @@ def caesar_cipher (string, number)
   end
 
   array = string.split('')
-  array.collect! { |letter| (letter =~ /\W/) ? #if each letter is non-alphanumeric, skip, otherwise apply number
+  array.collect! { |letter| (letter =~ /[\d\W]/) ? #if each letter is non-alphanumeric, skip, otherwise apply number
                    letter = letter : letter = loop_back(letter.ord, number).chr }
   array.join('')
 end
